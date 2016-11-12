@@ -1,0 +1,38 @@
+{
+  "name": "react-redux-autocomplete",
+  "description": "- Node.js v6.9.x - NPM v3.x",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {},
+  "repository": "https://github.com/Lonelind/react-redux-autocomplete",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-plugin-transform-class-properties": "^6.18.0",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-es2016": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "bem-cn": "^2.1.3",
+    "css-loader": "^0.25.0",
+    "postcss-loader": "^1.1.1",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-redux": "^4.4.5",
+    "react-router": "^3.0.0",
+    "redux": "^3.6.0",
+    "style-loader": "^0.13.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.3.1",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "scripts": {
+    "start": "node --harmony server.js & webpack-dev-server --hot"
+  },
+  "author": "Alexander Kuzmin",
+  "license": "MIT"
+}
