@@ -88,6 +88,12 @@ export default class Autocomplete extends React.Component {
 		});
 	}
 
+	fallBackToNative(evt) {
+		evt.preventDefault();
+
+		this.select.focus();
+	}
+
 	handleScroll(evt) {
 		evt.preventDefault();
 	}
@@ -129,6 +135,14 @@ export default class Autocomplete extends React.Component {
 		});
 	}
 
+	renderSelectOption(child) {
+		return (
+			<option value={child.props.value}>
+				{child.props.label}
+			</option>
+		);
+	}
+
 	render() {
 		return (
 			<div className={this.block({ 
@@ -144,6 +158,7 @@ export default class Autocomplete extends React.Component {
 						value={this.state.query}
 						onChange={(evt) => this.updateQuery(evt.target.value)}
 						onFocus={(evt) => this.toggleFocusState(true, true)}
+						onTouchEnd={(evt) => this.fallBackToNative(evt)}
 						ref={(input) => this.input = input}
 					/>
 					{(!this.state.query || this.state.focus) && this.state.direction === 'down' 
@@ -176,6 +191,15 @@ export default class Autocomplete extends React.Component {
 						{React.Children.map(this.props.children, this.renderChild.bind(this))}
 					</ul>
 				</div>
+				<select
+					className={this.block('select').is('hidden')}
+					onChange={(evt) => this.props.onValueChange(evt.target.value)}
+					value={this.props.selectedValue}
+					size="0"
+					ref={(select) => this.select = select}
+				>
+					{React.Children.map(this.props.children, this.renderSelectOption.bind(this))}
+				</select>
 			</div>
 		);
 	}
