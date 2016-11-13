@@ -28,7 +28,7 @@ export default {
                     path.resolve(__dirname, 'src/styles'),
                     path.resolve(__dirname, 'src/components'),
                 ],
-                loader: 'style!css!postcss?browsers=last 2 versions!stylus',
+                loader: 'style!css!postcss?sourceMap=inline!stylus',
             },
         ],
     },
